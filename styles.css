@@ -1,0 +1,192 @@
+/* Общие стили */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif; /* Современный шрифт */
+    background-color: #121212; /* Очень темный серый */
+    color: #e0e0e0; /* Светлый текст */
+    line-height: 1.6;
+}
+
+.app-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding: 20px 25px;
+    background-color: #1e1e1e; /* Темнее, чем фон body */
+    border-radius: 8px;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.2); /* Мягкая тень */
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #fff; /* Белый заголовок */
+    text-shadow: 0 0 5px #64ffda; /* Неоновый эффект */
+}
+
+#offline-status {
+    background-color: #f44336; /* Красный цвет */
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 0.875rem;
+}
+
+.hidden {
+    display: none;
+}
+
+/* New Note Area */
+.new-note {
+    background-color: #1e1e1e;
+    padding: 25px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.2);
+}
+
+textarea {
+    width: 100%;
+    height: 150px;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #333; /* Темная рамка */
+    border-radius: 6px;
+    resize: vertical;
+    font-family: inherit;
+    font-size: 1rem;
+    background-color: #212121; /* Еще темнее, чем фон new-note */
+    color: #fff; /* Светлый текст */
+}
+
+textarea:focus {
+    border-color: #64ffda; /* Неоновый акцент при фокусе */
+    outline: 0;
+    box-shadow: 0 0 5px #64ffda; /* Неоновая тень при фокусе */
+}
+
+button {
+    background-color: #64ffda; /* Неоновый акцент */
+    color: #212121; /* Темный текст на акценте */
+    border: none;
+    padding: 12px 25px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+button:hover {
+    background-color: #4cb3ac; /* Более темный оттенок неонового */
+    color: #fff; /* Светлый текст при наведении */
+}
+
+/* Notes List */
+.notes-list-container {
+    background-color: #1e1e1e;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    font-size: 1.75rem;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+#notes-list {
+    list-style: none;
+    padding: 0;
+}
+
+/* Note Item (Card) */
+.note-item {
+    background-color: #212121;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.15s ease-in-out;
+    border: 1px solid #333; /* добавляем небольшую границу для большего контраста */
+}
+
+.note-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.3); /* Усиливаем тень при наведении */
+}
+
+.note-content {
+    flex: 1;
+    margin-bottom: 15px;
+    word-break: break-word;
+    font-size: 1.1rem;
+    color: #e0e0e0;
+}
+
+.note-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.delete-btn,
+.edit-btn {
+    background-color: transparent;
+    border: 1px solid #64ffda; /* Неоновая граница */
+    color: #64ffda; /* Неоновый цвет текста */
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.delete-btn:hover {
+    background-color: #f44336; /* Красный цвет при наведении */
+    color: #fff;
+    border-color: #f44336;
+}
+
+.edit-btn:hover {
+    background-color: #64ffda; /* Неоновый при наведении */
+    color: #212121;
+    border-color: #64ffda;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 600px) {
+    .app-container {
+        padding: 15px;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    h1 {
+        margin-bottom: 10px;
+    }
+
+    .note-actions {
+        justify-content: flex-start;
+    }
+
+    .note-actions button {
+        width: auto;
+    }
+}
